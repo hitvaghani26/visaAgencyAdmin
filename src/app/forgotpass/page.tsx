@@ -31,7 +31,7 @@ const ForgotPass = () => {
                     <input
                         className="block w-full font-bold bg-gradient-to-br from-[#E02454] to-[#0d426e81] text-white py-3 mt-5 rounded-[20px] shadow-[rgba(133,189,215,0.88)_0px_20px_10px_-15px] border-none transition-all duration-200 ease-in-out hover:scale-105 hover:shadow-[rgba(133,189,215,0.88)_0px_23px_10px_-20px] active:scale-95 active:shadow-[rgba(133,189,215,0.88)_0px_15px_10px_-10px]"
                         type="submit"
-                        value="Sign In"
+                        value="Send Email"
                     />
                 </form>
 
