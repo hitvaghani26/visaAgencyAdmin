@@ -5,7 +5,7 @@ const page = () => {
   return (
     <div className='flex justify-center items-center h-screen'>
 
-    <div className="  bg-[#F8F9FD] bg-gradient-to-t from-white to-[#F4F7FB] rounded- p-6 border-5  ">
+    <div className="  bg-[#F8F9FD]  rounded- p-6 border-5  ">
     <div className="w-[500px] text-center font-black text-[30px] text-[#0D426E]">Log in</div>
 
     <form action="" className="mt-5">
@@ -34,7 +34,7 @@ const page = () => {
       </span>
 
       <input
-        className="block w-full font-bold bg-gradient-to-br from-[#E02454] to-[#0D426E] text-white py-3 mt-5 rounded-lg shadow-[rgba(133,189,215,0.88)_0px_20px_10px_-15px] border-none transition-all duration-200 ease-in-out hover:scale-105 hover:shadow-[rgba(133,189,215,0.88)_0px_23px_10px_-20px] active:scale-95 active:shadow-[rgba(133,189,215,0.88)_0px_15px_10px_-10px]"
+        className="block w-full font-bold bg-gradient-to-br from-[#E02454] to-[#0D426E] text-white py-3 mt-5 rounded-lg  transition-all duration-200 ease-in-out hover:scale-105  active:shadow-[rgba(133,189,215,0.88)_0px_15px_10px_-10px]"
         type="submit"
         value="Sign In"
         />
