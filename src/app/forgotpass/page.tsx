@@ -6,7 +6,7 @@ const ForgotPass = () => {
 
         <div className='flex justify-center items-center h-screen'>
 
-            <div className=" bg-[#F8F9FD] bg-gradient-to-t from-white to-[#F4F7FB] rounded-[40px] p-6 border-5  shadow-[rgba(224,36,84,0.4)_0px_10px_30px_1px,rgba(13,66,110,0.4)_0px_10px_30px_1px] mx-auto my-5 border-2 border-[#0D426E]
+            <div className=" bg-[#F8F9FD] bg-gradient-to-t from-white to-[#F4F7FB] rounded-[40px] p-6 border-5  shadow-[rgba(224,36,84,0.4)_0px_10px_30px_1px,rgba(13,66,110,0.4)_0px_10px_30px_1px] mx-auto my-5
 ">
                 <div className="w-[500px] text-center font-black text-[30px] text-[#0D426E]">Forgot Password</div>
 
