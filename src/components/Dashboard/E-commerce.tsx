@@ -14,6 +14,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { Typography } from '@mui/material';
+
 const MapOne = dynamic(() => import("@/components/Maps/MapOne"), {
   ssr: false,
 });
@@ -23,34 +25,49 @@ const ChartThree = dynamic(() => import("@/components/Charts/ChartThree"), {
 });
 const brandData = [
   {
-   component:"section 1",
-   title: "this is title",
-   content: "this is content",
-   buttontext: "click this"
+    component: "section 1",
+    title: "this is title",
+    content: "this is content",
+    buttontext: "click this"
   }
 ];
+// function createData(
+//   name: string,
+//   calories: number,
+//   fat: number,
+//   carbs: number,
+//   protein: number,
+// ) {
+//   return { name, calories, fat, carbs, protein };
+// }
+
+// const rows = [
+//   createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+//   createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+//   createData('Eclair', 262, 16.0, 24, 6.0),
+//   createData('Cupcake', 305, 3.7, 67, 4.3),
+//   createData('Gingerbread', 356, 16.0, 49, 3.9),
+// ];
 function createData(
   name: string,
-  calories: number,
-  fat: number,
-  carbs: number,
-  protein: number,
+  email: string,
+  title: string,
+  company: string
 ) {
-  return { name, calories, fat, carbs, protein };
+  return { name, email, title, company };
 }
 
 const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('John Doe', 'john.doe@example.com', 'Software Engineer', 'Tech Corp'),
+  createData('Jane Smith', 'jane.smith@example.com', 'Product Manager', 'Innovate Ltd'),
+  createData('Sam Wilson', 'sam.wilson@example.com', 'UX Designer', 'Creative Solutions'),
+  createData('Linda Johnson', 'linda.johnson@example.com', 'Data Scientist', 'DataWorks'),
+  createData('Chris Evans', 'chris.evans@example.com', 'Marketing Specialist', 'AdvertPlus'),
 ];
-
 const ECommerce: React.FC = () => {
   return (
     <>
-     {/* <div className="rounded-sm border border-stroke bg-white px-5 pb-2.5 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
+      {/* <div className="rounded-sm border border-stroke bg-white px-5 pb-2.5 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
       <h4 className="mb-6 text-xl font-semibold text-black dark:text-white">
         HomePage
       </h4>
@@ -113,7 +130,7 @@ const ECommerce: React.FC = () => {
         ))}
       </div>
     </div> */}
-{/* <div className="rounded-sm border border-stroke bg-white px-5 pb-2.5 pt-6 shadow-lg dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
+      {/* <div className="rounded-sm border border-stroke bg-white px-5 pb-2.5 pt-6 shadow-lg dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
   <h4 className="mb-6 text-xl font-semibold text-black dark:text-white">
     HomePage
   </h4>
@@ -173,36 +190,81 @@ const ECommerce: React.FC = () => {
   </div>
 </div>
  */}
-  <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.name}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+      <TableContainer component={Paper} sx={{ boxShadow: 1, borderRadius: 2, border: 1 }}>
+        <Typography variant="h6" component="div" sx={{ padding: 2, fontWeight: 'bold', backgroundColor: '#f5f5f5', borderBottom: '1px solid #ddd' }}>
+          HomePage
+        </Typography>
+        <Table sx={{ minWidth: 650 }} aria-label="user table">
+          <TableHead>
+            <TableRow>
+              <TableCell align="center" sx={{ fontWeight: 'bold', color: "#E02454" }}>Name</TableCell>
+              <TableCell align="center" sx={{ fontWeight: 'bold', color: "#E02454" }}>Email</TableCell>
+              <TableCell align="center" sx={{ fontWeight: 'bold', color: "#E02454" }}>Title</TableCell>
+              <TableCell align="center" sx={{ fontWeight: 'bold', color: "#E02454" }}>Company</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
 
+          <TableBody>
+            {rows.map((row) => (
+              <TableRow
+                key={row.name}
+                sx={{
+
+                  '&:hover': { backgroundColor: '#f9f9f9' }, // Hover effect for row
+                  cursor: 'pointer', // Add a pointer cursor for interactivity
+                  transition: 'background-color 0.3s ease', // Smooth transition for hover
+                }}
+              >
+                <TableCell component="th" align="center" scope="row" sx={{ padding: 2 }}>
+                  {row.name}
+                </TableCell>
+                <TableCell align="center" sx={{ padding: 2, borderRight: '2px solid #0D426E', borderLeft: '2px solid #0D426E' }}>{row.email}</TableCell>
+                <TableCell align="center" sx={{ padding: 2, borderRight: '2px solid #0D426E' }}>{row.title}</TableCell>
+                <TableCell align="center" sx={{ padding: 2 }}>{row.company}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+      <div className="my-4">
+
+      </div>
+      <TableContainer component={Paper} sx={{ boxShadow: 1, borderRadius: 2}}>
+        <Typography variant="h6" component="div" sx={{ padding: 2, fontWeight: 'bold', backgroundColor: '#f5f5f5', borderBottom: '1px solid #ddd' }}>
+          HomePage
+        </Typography>
+        <Table sx={{ minWidth: 650 }} aria-label="user table">
+          <TableHead>
+            <TableRow>
+              <TableCell align="center" sx={{ fontWeight: 'bold',  }}>Name</TableCell>
+              <TableCell align="center" sx={{ fontWeight: 'bold',  }}>Email</TableCell>
+              <TableCell align="center" sx={{ fontWeight: 'bold',  }}>Title</TableCell>
+              <TableCell align="center" sx={{ fontWeight: 'bold',  }}>Company</TableCell>
+            </TableRow>
+          </TableHead>
+
+          <TableBody>
+            {rows.map((row) => (
+              <TableRow
+                key={row.name}
+                sx={{
+
+                  '&:hover': { backgroundColor: '#f9f9f9' }, // Hover effect for row
+                  cursor: 'pointer', // Add a pointer cursor for interactivity
+                  transition: 'background-color 0.3s ease', // Smooth transition for hover
+                }}
+              >
+                <TableCell component="th" align="center" scope="row" sx={{ padding: 2 }}>
+                  {row.name}
+                </TableCell>
+                <TableCell align="center" sx={{ padding: 2,  }}>{row.email}</TableCell>
+                <TableCell align="center" sx={{ padding: 2,  }}>{row.title}</TableCell>
+                <TableCell align="center" sx={{ padding: 2 }}>{row.company}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </>
   );
 };
